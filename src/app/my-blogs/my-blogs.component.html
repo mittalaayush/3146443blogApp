@@ -1,0 +1,94 @@
+<div class="container" style="width: 90%">
+
+  <div class="row">
+   <span class="col s2 - offset-s1">
+    <button class="waves-effect waves-light btn" (click) = "toggleContent()" id = "showContent">
+      Show_Content
+    </button>
+  </span>
+    <span class="col s3 offset-s1">
+          <select id="CategoryFilter" #Category style="display: block" (change)="setCategory()">
+            <option value="All">All</option>
+            <option value="Tech">Tech</option>
+            <option value="Management">Management</option>
+            <option value="Medical">Medical</option>
+            <option value="Others">Others</option>
+          </select>
+        </span>
+    <span class="col s3 offset-s1">
+       <input placeholder="Search By Title" id="title_search" type="text" (input)="searchTitle()">
+    </span>
+  </div>
+
+<div class="row">
+  <div  id ="myBlogs_div" class="col s10 offset-s1">
+    <div class="card darken-1">
+      <div class="card-content ">
+        <span class="card-title">My Blogs</span>
+        <div class="collection">
+          <a *ngFor="let blog of blogs; let i =index">
+            <div *ngIf="(blog.Category==this.categoryFilter || this.categoryFilter=='All') && blog.Title.toLowerCase().includes(this.title.toLowerCase())">
+            <span class="col s6" > Author : {{blog.Author}}</span>
+            <span class="col s6">
+            Title : {{blog.Title}}
+              </span>
+            <br/>
+            <span  class="col s6"> Last Modified On : {{blog.Date| date: 'dd/MM/yyyy' }}</span>
+            <span  class="col s6">
+            Category : {{blog.Category}}
+              </span>
+              <div class="col s12" *ngIf="showcontent">
+                {{blog.Body}}
+              </div>
+              <span class="row">
+              <span class="col 12">
+            <span *ngIf="this.current_user.favorites.indexOf(blog.id)>-1">
+                <i class="material-icons" (click)="markFavorite(blog)" style="color:red">favorite</i>
+            </span>
+            <span *ngIf="this.current_user.favorites.indexOf(blog.id)==-1">
+              <i class="material-icons" (click)="markFavorite(blog)" style="color:lightgrey">favorite</i>
+            </span>
+            <i class="material-icons" (click)="editBlog(blog)">edit</i>
+            <i class="material-icons" (click)="deleteBlog(blog)">delete</i>
+              </span>
+                </span>
+              <hr style="color: #e3e3e3 "/>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="Update_div" class="col s12 m6" style="display:none">
+    <div class="card darken-1">
+      <div class="card-content ">
+        <span class="card-title">Update Blog</span>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                Title :
+                <input type="text" id="title" />
+              </div>
+              <div class="input-field col s12">Category :
+                <span><select id="Category" style="display: block">
+                  <option value="Tech">Tech</option>
+                  <option value="Management">Management</option>
+                  <option value="Medical">Medical</option>
+                  <option value="Others">Others</option>
+                </select></span>
+              </div>
+              <div class="input-field col s12">
+                <textarea id="blogbody" class="materialize-textarea" placeholder="Type Your Blog Here"></textarea>
+              </div>
+            </div>
+          </form>
+          <a class="center waves-effect waves-light btn" (click)="updateBlog()">Update Blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

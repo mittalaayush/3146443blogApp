@@ -1,0 +1,42 @@
+<br/>
+<div class="container">
+
+  <div class="row offset-s2">
+    <form class="col s10 offset-s1" style="border:solid black thin;padding: 20px">
+      <div class="row">
+        <div class="col s9 offset-s1">
+          Title : <input id="title" type="text" maxlength="26"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s3 offset-s1">
+          Category
+        </div>
+        <div class="col s4 ">
+          <select id="Category" style="display: block">
+            <option value="Tech">Tech</option>
+            <option value="Management">Management</option>
+            <option value="Medical">Medical</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s9 offset-s1">
+          Blog Content :
+        <textarea id="blogbody" class="materialize-textarea" placeholder="Type Your Blog Here">
+        </textarea>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div align="middle">
+        <a class="waves-effect waves-light btn-large" (click)="addBlog()">Post Blog</a>
+      </div>
+      </div>
+
+    </form>
+  </div>
+</div>

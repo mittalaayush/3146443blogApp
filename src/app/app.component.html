@@ -1,0 +1,32 @@
+<nav *ngIf="this.request.currentUser!=null" id="nav">
+  <div class="teal nav-wrapper" >
+   <ul id="nav-mobile" class="hide-on-med-and-down">
+      <li><a [routerLink]=link.home>Home</a></li>
+      <li><a [routerLink]=link.add>Add</a></li>
+     <li><a [routerLink]=link.favorite><i class="material-icons">favorite</i></a></li>
+     <li><a [routerLink]=link.myBlogs>My Blogs</a></li>
+
+    </ul>
+
+    <ul id="nav-mobile-right" class="right hide-on-med-and-down" style="background-color: #00695c">
+      <li><a (click)="logout()">Log Out</a></li>
+    </ul>
+    <h2 align ="center">
+      My Blog App
+    </h2>
+
+
+  </div>
+</nav>
+
+<h3 *ngIf="this.request.currentUser!=null" align="middle">
+  Welcome {{this.request.currentUser.User_name}}
+</h3>
+
+<router-outlet></router-outlet>
+<!--<br/>-->
+<!--<div *ngIf = "display=='home'">-->
+  <!--Current Author : {{user.User_name}}-->
+
+
+<!--</div>-->

@@ -1,0 +1,47 @@
+<div class="row">
+  <div align="middle">
+  <img src="./assets/blogLogo.png" />
+  </div>
+    <form class="col s4 offset-s1 height" style="background-color: aliceblue;padding: 20px" (submit)="checkUser(username.value,pass.value)">
+      <div class="row">
+        <div class="input-field col s12">
+        User Name : <input type = "text" id="user_name" #username maxlength="20"/>
+        </div>
+      </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Password : <input id="password" type="password" #pass class="validate" maxlength="22">
+      </div>
+    </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <button class="btn waves-effect waves-light" id="login" type="submit" >Login
+      <i class="material-icons right">send</i>
+    </button>
+        </div>
+      </div>
+    <br/>
+  </form>
+
+  <form class="col s4 offset-s1 height" style="background-color: aliceblue;padding: 20px">
+    <div class="row">
+      <div class="input-field col s12">
+    User Name : <input type = "text" id="SignUp_user_name" #SignUpusername maxlength="20"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Password : <input id="SignUp_password" type="password" #SignUppass class="validate" maxlength="22">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+    <button class="btn waves-effect waves-light" type="button" (click)="CreateUser(SignUpusername.value,SignUppass.value)">Sign Up
+      <i class="material-icons right">send</i>
+    </button>
+      </div>
+    </div>
+    <br/>
+  </form>
+
+</div>

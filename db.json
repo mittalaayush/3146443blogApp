@@ -1,0 +1,89 @@
+{
+  "blogs": [
+    {
+      "Author": "Aayush",
+      "Title": "First Blog",
+      "Date": "Thu Nov 23 2017 12:16:26 GMT+0530 (India Standard Time)",
+      "Category": "Management",
+      "Body": "This is a test blog.This is my first management blog",
+      "id": 0
+    },
+    {
+      "Author": "Abhishek",
+      "Title": "Management",
+      "Date": "Tue Nov 21 2017 17:07:17 GMT+0530 (India Standard Time)",
+      "Category": "Tech",
+      "Body": "Testing the blog app",
+      "id": 1
+    },
+    {
+      "Author": "Akash",
+      "Title": "Medical",
+      "Date": "Tue Nov 21 2017 17:07:17 GMT+0530 (India Standard Time)",
+      "Category": "Medical",
+      "Body": "This is a blog about Lifestyle",
+      "id": 2
+    },
+    {
+      "Author": "a",
+      "Title": "A",
+      "Date": "Thu Nov 23 2017 10:49:58 GMT+0530 (India Standard Time)",
+      "Category": "Tech",
+      "Body": "        A",
+      "id": 5
+    }
+  ],
+  "Users": [
+    {
+      "User_name": "Aayush",
+      "Password": "aayush",
+      "favorites": [
+        0,
+        2
+      ],
+      "id": 0
+    },
+    {
+      "User_name": "Abhishek",
+      "Password": "abhishek",
+      "favorites": [],
+      "id": 1
+    },
+    {
+      "User_name": "Akash",
+      "Password": "akash",
+      "favorites": [],
+      "id": 2
+    },
+    {
+      "User_name": "Nikhil",
+      "Password": "nikhil",
+      "favorites": [
+        0,
+        1
+      ],
+      "id": 3
+    },
+    {
+      "User_name": "avikalkohli",
+      "Password": "avikalkohli",
+      "favorites": [],
+      "id": 4
+    },
+    {
+      "User_name": "abcd",
+      "Password": "abcd",
+      "favorites": [],
+      "id": 5
+    },
+    {
+      "User_name": "a",
+      "Password": "a",
+      "favorites": [
+        0,
+        5
+      ],
+      "id": 6
+    }
+  ]
+}

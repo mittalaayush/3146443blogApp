@@ -1,0 +1,57 @@
+<div class="container" style="width:90%">
+  <div class="row">
+  <span class="col s2 offset-s1">
+    <button class="waves-effect waves-light btn" (click) = "toggleContent()" id = "showContent">
+      Show_Content
+    </button>
+  </span>
+        <span class="col s3 offset-s1">
+          <select id="Category" #Category style="display: block" (change)="setCategory()">
+            <option value="All">All</option>
+            <option value="Tech">Tech</option>
+            <option value="Management">Management</option>
+            <option value="Medical">Medical</option>
+            <option value="Others">Others</option>
+          </select>
+        </span>
+
+    <span class="col s3 offset-s1">
+       <input placeholder="Search By Title" id="title_search" type="text" (input)="searchTitle()">
+    </span>
+
+
+  </div>
+  <div class="collection">
+    <a *ngFor="let blog of this.blogs">
+      <div *ngIf="(blog.Category==this.categoryFilter || this.categoryFilter=='All') && blog.Title.toLowerCase().includes(this.title.toLowerCase()) ">
+      <div class="row" style="padding: 10px">
+        <div class="col s2" >
+          Author : {{blog.Author}}
+        </div>
+        <div class="col s3">
+          Title : {{blog.Title}}
+        </div>
+        <div class="col s4">
+          Last Modified On : {{blog.Date| date: 'dd/MM/yyyy'}}
+        </div>
+        <div class="col s3">
+          Category : {{blog.Category}}
+        </div>
+        <div class="col s12" *ngIf="showcontent">
+          {{blog.Body}}
+        </div>
+      </div>
+        <div class="row" style="margin-top:-10% ;padding-left: 10px">
+          <div class="col s12" *ngIf="this.current_user.favorites.indexOf(blog.id)>-1">
+        <i class="material-icons" (click)="markFavorite(blog)" style="color:red">favorite</i>
+      </div>
+      <div class="col s12" *ngIf="this.current_user.favorites.indexOf(blog.id)==-1">
+           <i class="material-icons" (click)="markFavorite(blog)" style="color:lightgrey">favorite</i>
+      </div>
+        </div>
+        <hr style="color: #e3e3e3 "/>
+      </div>
+    </a>
+
+  </div>
+</div>
